@@ -1,0 +1,121 @@
+
+:root{
+  --background: rgb(77, 75, 75);
+  --foreground: rgb(39, 38, 38);
+  --accent1: #00ff4c;
+  --accent2: rgb(24, 24, 24);
+  --text: white;
+  --lighttext: rgba(150, 150, 150, 0.89); 
+}
+.light-theme{
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(209, 205, 205);
+  --accent1: #5448fd;
+  --accent2: rgb(214, 214, 198);
+  --text: rgb(0, 0, 0) ;
+  --lighttext: rgba(78, 76, 76, 0.836);
+} 
+
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  color: var(--text);
+  background: var(--background);
+  max-height: fit-content;
+  width: 100%;
+
+}
+
+
+
+
+h1{
+    text-align: center;
+    font-size: 2rem;
+}
+p{
+  margin-left: 10px;
+  font-size: medium;
+  color: var(--lighttext);
+}
+footer p{
+  text-align: end;
+}
+article{
+    display: grid;
+    grid-template-areas: 
+      "header header header"
+      "section section section"
+      "footer footer footer";
+}
+#icon{
+  max-width: 30px;
+  cursor: pointer;
+}
+header{
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  place-items: center;
+}
+
+section{
+  grid-area: section;
+}
+footer{
+  grid-area: footer;
+}
+
+
+.keys{
+  margin: 10px;
+  border-radius: 5px;
+  background-color: var(--foreground);
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); 
+  place-content: space-around;
+  place-items: center;
+
+}
+
+
+
+
+.key {
+  border: .4rem solid var(--background);
+  border-radius: 1rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: var(--lighttext);
+  background: var(--accent2);
+  text-shadow: 0 0 .5rem var(--foreground);
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: var(--accent1);
+  font-weight: 700;
+}
+
+.playing{
+  transform: scale(1.2);
+  border-color: var(--accent1);
+  box-shadow: inset 0 0 1rem var(--accent1);
+}

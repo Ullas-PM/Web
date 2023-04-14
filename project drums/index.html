@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta title="Online Drum KIT">
+  <meta description="Free online virtual drum kit easy to use.">
+  <title>Drums</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/drum.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/normal.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <article>
+    <header>
+      <h1>Digital Drums</h1>
+      <img src="images/sun.png" alt="dark or light theme icon" class="theme" id="icon">
+    </header>
+
+    <section>
+      <p>press the keys <br> On mobile phone use landscape orientation for better performance</p>
+
+      <div class="keys">
+
+        <div data-key="65" class="key">
+          <kbd>A</kbd>
+          <span class="sound">clap</span>
+        </div>
+
+        <div data-key="68" class="key">
+          <kbd>D</kbd>
+          <span class="sound">kick</span>
+        </div>
+
+        <div data-key="83" class="key">
+          <kbd>S</kbd>
+          <span class="sound">hihat</span>
+        </div>
+
+        
+
+        <div data-key="70" class="key">
+          <kbd>F</kbd>
+          <span class="sound">boom</span>
+        </div>
+
+        <div data-key="71" class="key">
+          <kbd>G</kbd>
+          <span class="sound">openhat</span>
+        </div>
+
+        <div data-key="74" class="key">
+          <kbd>J</kbd>
+          <span class="sound">tom</span>
+        </div>
+
+        <div data-key="72" class="key">
+          <kbd>H</kbd>
+          <span class="sound">ride</span>
+        </div>
+
+       
+
+        <div data-key="75" class="key">
+          <kbd>K</kbd>
+          <span class="sound">snare</span>
+        </div>
+
+        <div data-key="76" class="key">
+          <kbd>L</kbd>
+          <span class="sound">tink</span>
+        </div>
+
+      </div>
+
+
+
+
+      <audio data-key="65" src="sounds/clap.wav"></audio>
+      <audio data-key="83" src="sounds/hihat.wav"></audio>
+      <audio data-key="68" src="sounds/kick.wav"></audio>
+      <audio data-key="70" src="sounds/boom.wav"></audio>
+      <audio data-key="71" src="sounds/openhat.wav"></audio>
+      <audio data-key="72" src="sounds/ride.wav"></audio>
+      <audio data-key="74" src="sounds/tom.wav"></audio>
+      <audio data-key="75" src="sounds/snare.wav"></audio>
+      <audio data-key="76" src="sounds/tink.wav"></audio>
+
+
+
+    </section>
+
+    <footer>
+      <p>Created by Ullas P M&copy;</p>
+
+    </footer>
+  </article>
+  <script src="js/main.js"></script>
+
+  <!-- <script>
+
+
+    //themeing
+      var dnl = document.getElementById('icon');
+
+      dnl.onclick = function (e) {
+        document.body.classList.toggle("dark-theme")
+        if (document.body.classList.contains("dark-theme")) {
+          icon.src = "images/sun.png";
+        } else {
+          icon.src = "images/moon.png"
+        }
+
+      }
+
+
+
+
+    // listen for keydown
+    window.addEventListener('keydown',function(e){ 
+      console.log(e.keyCode)
+      // selection of audio according to pressed key
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`) 
+      console.log(audio);
+      if(!audio) return; //if preesed key gives no audio press q no assigned audio to q so function stops
+
+      //else
+      audio.currentTime = 0; // rewind to start
+
+      audio.play();
+    
+      //adding  animation transformation
+
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); 
+      
+      key.classList.toggle('playing');
+
+
+      
+    });
+
+    // transform end for each key
+    const keys = document.querySelectorAll('.key'); // array of keys
+    //effect to each key
+    keys.forEach( key  => key.addEventListener('transitionend', removePlaying))
+
+    function removePlaying(e){
+      if(e.propertyName !== 'transform') return; // skip if no transform
+      //if transform ends remove playing
+      this.classList.remove('playing');
+    
+    }
+
+    //follow at  ig __hum.alien__  ullas p m
+  </script> -->
+
+</body>
+
+</html>
